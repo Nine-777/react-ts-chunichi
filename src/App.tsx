@@ -4,22 +4,41 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1>中日ドラゴンズ安打数管理表</h1>
+      <input/>
+      <table>
+        <tr>
+          <th>名前</th>
+          <th>安打数</th>
+          <th></th>
+        </tr>
+        <tr>
+          <td>岡林</td>
+          <td>1</td>
+          <td>
+            <button>+</button>
+            <button>-</button>
+          </td>
+        </tr>
+        <tr>
+          <td>石川</td>
+          <td>1</td>
+          <td>
+            <button>+</button>
+            <button>-</button>
+          </td>
+        </tr>
+        <tr>
+          <td>木下</td>
+          <td>1</td>
+          <td>
+            <button>+</button>
+            <button>-</button>
+          </td>
+        </tr>
+      </table>
+    </>
   );
 }
 
