@@ -17,28 +17,11 @@ const App = () => {
         <tr>
           <th>名前</th>
           <th>安打数</th>
-          <th></th>
         </tr>
         <tr>
-          <td>岡林</td>
-          <td>
-            <Counter />
-            <Button variant="contained" color="primary" onClick={() => count > 0 && setCount(count - 1)}>-</Button>
-          </td>
-        </tr>
-        <tr>
-          <td>石川</td>
-          <td>
-            <Counter />
-            <Button variant="contained" color="primary" onClick={() => count > 0 && setCount(count - 1)}>-</Button>
-          </td>
-        </tr>
-        <tr>
-          <td>木下</td>
-          <td>
-            <Counter />
-            <Button variant="contained" color="primary" onClick={() => count > 0 && setCount(count - 1)}>-</Button>
-          </td>
+          <Counter userName="岡林"/>
+          <Counter userName="石川"/>
+          <Counter userName="木下"/>
         </tr>
       </table>
     </div>
