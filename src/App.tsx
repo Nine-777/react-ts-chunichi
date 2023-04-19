@@ -2,22 +2,18 @@ import { useState } from "react";
 import Button from "@mui/material/Button";
 import Counter from "./components/Counter";
 import "./App.css";
+import { usePlayers } from "./hooks/usePlayers";
 
 const App = () => {
   const [inputValue, setInputValue] = useState("");
-
-  const [players, setPlayers] = useState([
-    { name: "岡林", count: 0 },
-    { name: "石川", count: 0 },
-    { name: "木下", count: 0 },
-  ]);
+  const playersHooks = usePlayers();
 
   const handleSubmit = (value: string) => {
+    const players = playersHooks.players;
     if (players.some((player) => player.name === value)) {
-      // TODO: 登録済みの選手の場合、選手のカウントを1増やす
-      alert("一致するのがあったよ");
+      playersHooks.incrementCount(value);
     } else {
-      setPlayers([...players, { name: value, count: 0 }]);
+      playersHooks.setPlayers([...players, { name: value, count: 0 }]);
     }
   };
 
@@ -45,8 +41,12 @@ const App = () => {
           <th>安打数</th>
         </tr>
       </table>
-      {players.map((player, idx) => (
-        <Counter key={idx} userName={player.name} />
+      {playersHooks.players.map((player, idx) => (
+        <Counter
+          key={idx}
+          player={player}
+          incrementCount={playersHooks.incrementCount}
+        />
       ))}
     </div>
   );
