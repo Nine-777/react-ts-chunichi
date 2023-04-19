@@ -46,6 +46,7 @@ const App = () => {
           key={idx}
           player={player}
           incrementCount={playersHooks.incrementCount}
+          decrementCount={playersHooks.decrementCount}
         />
       ))}
     </div>

@@ -4,10 +4,11 @@ import { Player } from "../entities/player";
 type CounterProps = {
   player: Player;
   incrementCount: (name: string) => void;
+  decrementCount: (name: string) => void;
 };
 
 const Counter = (props: CounterProps) => {
-  const { player, incrementCount } = props;
+  const { player, incrementCount, decrementCount } = props;
 
   return (
     <div>
@@ -23,7 +24,7 @@ const Counter = (props: CounterProps) => {
       <Button
         variant="contained"
         color="primary"
-        // onClick={playersHooks.incrementCount}
+        onClick={() => decrementCount(player.name)}
       >
         -
       </Button>

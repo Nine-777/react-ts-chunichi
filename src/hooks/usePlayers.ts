@@ -21,9 +21,21 @@ export const usePlayers = () => {
     setPlayers(newPlayers);
   };
 
+  const decrementCount = (name: string) => {
+    const newPlayers = players.map((player) => {
+      if (player.name === name && player.count > 0) {
+        return { name: player.name, count: player.count - 1 };
+      } else {
+        return player;
+      }
+    });
+    setPlayers(newPlayers);
+  };
+
   return {
     players: players,
     setPlayers: setPlayers,
     incrementCount: incrementCount,
+    decrementCount: decrementCount,
   };
 };
